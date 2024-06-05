@@ -1,3 +1,5 @@
+#IMPORTAÇÃO DAS BIBLIOTECAS
+
 import pandas as pd
 import seaborn as sns
 
@@ -14,7 +16,7 @@ import pandas as pd
 df = pd.read_csv("advertising.csv")
 print(df)
 #
-#v 
+#
 
 sns.heatmap(df.corr(), annot =True, cmap="Wistia")
 plt.show()
