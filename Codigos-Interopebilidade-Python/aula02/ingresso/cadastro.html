@@ -1,0 +1,29 @@
+		{% extends "layout.html" %}
+		{% block conteudo %}
+		<form method="post">
+			<fieldset>
+				<legend>Registro de Ingresso</legend>
+				<p>
+					<label for="i1">CPF</label> <br/>
+					<input type="text" name="cpf" id="i1" autocomplete="off" />
+				</p>
+				<p>
+					<label for="i2">Nome</label> <br/>
+					<input type="text" name="nome" id="i2" autocomplete="off" />
+				</p>
+				<p>
+					<label for="i3">Curso</label> <br/>
+					<select name="curso" id="i3">
+						<option value="" hidden>Selecione</option>
+						<option value="SI">Análise de Sistemas</option>
+						<option value="AG">Engenharia Agronômica</option>
+						<option value="AL">Engenharia de Alimentos</option>
+					</select>
+				</p>
+				<p>
+					<button type="reset">Redefinir</button>
+					<button type="submit" formaction="/inserir">Ingressar</button>
+				</p>
+			</fieldset>
+		</form>
+		{% endblock %}

@@ -1,0 +1,46 @@
+		{% extends "layout.html" %}
+		{% block conteudo %}
+		<form method="post">
+			<fieldset>
+				<legend>Busca por Certificado/Diploma</legend>
+				<p>
+					<label for="i1">CPF</label> <br/>
+					<input type="text" name="cpf" id="i1" autocomplete="off" />
+				</p>
+				<p>
+					<label for="i2">Nível</label> <br/>
+					<select name="nivel" id="i2">
+						<option value="" hidden>Selecione</option>
+						<option value="EM">Ensino Médio</option>
+						<option value="ES">Ensino Superior</option>
+					</select>
+				</p>
+				<p>
+					<button type="reset">Redefinir</button>
+					<button type="submit" formaction="/buscar">Buscar</button>
+				</p>
+			</fieldset>
+		</form>
+		{% if resultado %}
+			<table border="1">
+				<tr>
+					<th> ID        </th>
+					<th> CPF       </th>
+					<th> Nível     </th>
+					<th> Chave     </th>
+					<th> Remover   </th>
+				</tr>
+				{% for tupla in resultado %}
+					<tr>
+						<td> {{tupla[0]}} </td>
+						<td> {{tupla[1]}} </td>
+						<td> {{tupla[2]}} </td>
+						<td> {{tupla[3]}} </td>
+						<td> <a href="/remover?id={{tupla[0]}}">X</a> </td>
+					<tr>
+				{% endfor %}
+			</table>
+		{% elif resultado is not none %}
+			<p>Nenhum registro encontrado.</p>
+		{% endif %}
+		{% endblock %}
