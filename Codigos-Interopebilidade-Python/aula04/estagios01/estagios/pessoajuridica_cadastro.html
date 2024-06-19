@@ -1,0 +1,18 @@
+		{% extends "layout.html" %}
+		{% block conteudo %}
+		<h2>Registro de Pessoa Jurídica</h2>
+		<form method="post">
+			<p>
+				<label for="i1">CNPJ</label> <br/>
+				<input type="text" name="cnpj" id="i1" autocomplete="off" />
+			</p>
+			<p>
+				<label for="i2">Nome</label> <br/>
+				<input type="text" name="nome" id="i2" autocomplete="off" />
+			</p>
+			<p>
+				<button type="reset">Redefinir</button>
+				<button type="submit" formaction="/pessoajuridicainserir">Cadastrar</button>
+			</p>
+		</form>
+		{% endblock %}

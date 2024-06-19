@@ -1,0 +1,21 @@
+		{% extends "layout.html" %}
+		{% block conteudo %}
+		<h2>Lista de Pessoas Jurídicas</h2>
+		<table border="1">
+			<tr>
+				<th> ID        </th>
+				<th> CNPJ      </th>
+				<th> Nome      </th>
+				<th> Remover   </th>
+			</tr>
+			{% for tupla in resultado %}
+				<tr>
+					<td> {{tupla[0]}} </td>
+					<td> {{tupla[1]}} </td>
+					<td> {{tupla[2]}} </td>
+					<td> <a href="/pessoajuridicaremover?id={{tupla[0]}}">X</a> </td>
+				<tr>
+			{% endfor %}
+		</table>
+		{% endblock %}
+

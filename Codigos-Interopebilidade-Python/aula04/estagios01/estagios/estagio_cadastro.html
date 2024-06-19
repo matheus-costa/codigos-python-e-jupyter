@@ -1,0 +1,28 @@
+		{% extends "layout.html" %}
+		{% block conteudo %}
+		<h2>Registro de Estágio</h2>
+		<form method="post">
+			<p>
+				<label for="i1">Pessoa Física</label> <br/>
+				<select name="pf" id="i1">
+					<option hidden> -- </option>
+					{% for p in pf %}
+						<option value="{{p[0]}}">{{p[1]}}</option>
+					{% endfor %}
+				</select>
+			</p>
+			<p>
+				<label for="i2">Pessoa Jurídica</label> <br/>
+				<select name="pj" id="i2">
+					<option hidden> -- </option>
+					{% for p in pj %}
+						<option value="{{p[0]}}">{{p[1]}}</option>
+					{% endfor %}
+				</select>
+			</p>
+			<p>
+				<button type="reset">Redefinir</button>
+				<button type="submit" formaction="/estagioinserir">Cadastrar</button>
+			</p>
+		</form>
+		{% endblock %}

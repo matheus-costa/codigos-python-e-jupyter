@@ -1,0 +1,26 @@
+		{% extends "layout.html" %}
+		{% block conteudo %}
+		<h2>Lista de Estágios</h2>
+		<table border="1">
+			<tr>
+				<th> ID        </th>
+				<th> Nome      </th>
+				<th> CPF       </th>
+				<th> Nome      </th>
+				<th> CPF       </th>
+				<th> Início    </th>
+				<th> Remover   </th>
+			</tr>
+			{% for tupla in resultado %}
+				<tr>
+					<td> {{tupla[0]}} </td>
+					<td> {{tupla[1]}} </td>
+					<td> {{tupla[2]}} </td>
+					<td> {{tupla[3]}} </td>
+					<td> {{tupla[4]}} </td>
+					<td> {{tupla[5]}} </td>
+					<td> <a href="/estagioremover?id={{tupla[0]}}">X</a> </td>
+				<tr>
+			{% endfor %}
+		</table>
+		{% endblock %}
